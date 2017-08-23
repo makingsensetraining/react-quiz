@@ -18,8 +18,8 @@ class Quiz extends React.Component {
     getInitialState() {
         return {
             questionData: [
-                {prompt: "This is the capital of which country? Canberra", answers: ["Turkey","Australia","Cuba","Algeria"], correct: 1},
-                {prompt: "This is the capital of which country? Bangkok", answers: ["Argentina","Thailand","India","United Kingdom"], correct: 1}],
+                {question: "This is the capital of which country? Canberra", answers: ["Turkey","Australia","Cuba","Algeria"], correct: 1},
+                {question: "This is the capital of which country? Bangkok", answers: ["Argentina","Thailand","India","United Kingdom"], correct: 1}],
             progress: 0,
             score: 0
         };
@@ -44,12 +44,12 @@ class Quiz extends React.Component {
     }
 
     render() {
-        var question = this.state.questionData[this.state.progress];
+        var currentQuestion = this.state.questionData[this.state.progress];
         if(this.state.questionData.length > this.state.progress) {
             return (
                 <div className="quiz container">
-                    <Questions questionText={question.prompt} />
-                    <AnswerList answers={question.answers} answerCallback={this.checkAnswer} />
+                    <Questions questionText={currentQuestion.question} />
+                    <AnswerList answers={currentQuestion.answers} answerCallback={this.checkAnswer} />
                     <Score score={this.state.score} />
                     <Progress progress={this.state.progress} total={this.state.questionData.length}/>
                 </div>

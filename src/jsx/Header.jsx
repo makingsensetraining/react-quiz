@@ -3,7 +3,9 @@ import '../App.css';
 
 const Header = () => {
     return (
-        <header className="header"><p className="title">React Training</p></header>
+        <header className="header">
+            <p className="title">React Training</p>
+        </header>
     );
 }
 
