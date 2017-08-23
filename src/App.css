@@ -54,3 +54,13 @@
   padding: 1%;
   width: 50%;
 }
+
+.quiz.reset-btn{
+  background: #d3d3d31c;
+  border: 2px solid #d3d3d33b;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  height: 45px;
+  width: 10%;
+}

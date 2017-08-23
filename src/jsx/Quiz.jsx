@@ -44,14 +44,14 @@ class Quiz extends React.Component {
     }
 
     render() {
-        var questionDatum = this.state.questionData[this.state.progress];
+        var question = this.state.questionData[this.state.progress];
         if(this.state.questionData.length > this.state.progress) {
             return (
                 <div className="quiz container">
-                    <Questions questionText={questionDatum.prompt} />
-                    <AnswerList answers={questionDatum.answers} answerCallback={this.checkAnswer} />
+                    <Questions questionText={question.prompt} />
+                    <AnswerList answers={question.answers} answerCallback={this.checkAnswer} />
                     <Score score={this.state.score} />
-                    <Progress progress={this.state.progress} />
+                    <Progress progress={this.state.progress} total={this.state.questionData.length}/>
                 </div>
             );
         } else {
@@ -59,7 +59,7 @@ class Quiz extends React.Component {
                 <div className="quiz container">
                     <p className="quiz question">Quiz Finished!</p>
                     <Score score={this.state.score} />
-                    <button type="button" onClick={this.resetQuiz}>Reset Quiz</button>
+                    <button type="button" className="quiz reset-btn" onClick={this.resetQuiz}>Reset Quiz</button>
                 </div>
             );
         }
