@@ -4,4 +4,8 @@ This is a quiz app created using React under the "React Fundamentals" training p
 The project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ### Requirements
-- Node and NPM
+- Node>=6 and NPM
+
+### Installation
+```sh
+git clone 
